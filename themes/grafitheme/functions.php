@@ -2,6 +2,7 @@
 
 function grafitheme_supports() {
     add_theme_support("title-tag");
+    add_theme_support("post-thumbnails");
 }
 
 add_action("after_setup_theme", "grafitheme_supports");
@@ -20,48 +21,16 @@ function grafitheme_register_assets() {
 
 add_action("wp_enqueue_scripts", "grafitheme_register_assets");
 
+function grafitheme_title_separator() {
+    return "|";
+}
 
+add_filter("document_title_separator", "grafitheme_title_separator");
 
+function grafitheme_document_title_parts($title) {
+    unset($title["tagline"]);
 
+    return $title;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+add_filter("document_title_parts", "grafitheme_document_title_parts");
