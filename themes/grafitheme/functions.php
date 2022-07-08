@@ -3,6 +3,10 @@
 function grafitheme_supports() {
     add_theme_support("title-tag");
     add_theme_support("post-thumbnails");
+    add_theme_support("menus");
+
+    register_nav_menu("header", "En tête du menu");
+    register_nav_menu("footer", "Pied de page");
 }
 
 add_action("after_setup_theme", "grafitheme_supports");
@@ -34,3 +38,19 @@ function grafitheme_document_title_parts($title) {
 }
 
 add_filter("document_title_parts", "grafitheme_document_title_parts");
+
+function grafitheme_menu_class($classes) {
+    $classes[] = "nav-item";
+
+    return $classes;
+}
+
+add_filter("nav_menu_css_class", "grafitheme_menu_class");
+
+function grafitheme_menu_link_class($attrs) {
+    $attrs["class"] = "nav-link";
+
+    return $attrs;
+}
+
+add_filter("nav_menu_link_attributes", "grafitheme_menu_link_class");
