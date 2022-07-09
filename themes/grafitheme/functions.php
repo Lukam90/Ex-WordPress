@@ -84,6 +84,28 @@ function grafitheme_pagination() {
     echo '</nav>';
 }
 
+function grafitheme_init() {
+    register_taxonomy("sport", "post", [
+        "labels" => [
+            "name"          => "Sport",
+            "singular_name" => "Sport",
+            "plural_name"   => "Sports",
+            "search_items"  => "Rechercher des sports",
+            "all_items"     => "Tous les sports",
+            "edit_item"     => "Editer le sport",
+            "update_item"   => "Mettre à jour le sport",
+            "add_new_item"  => "Ajouter un nouveau sport",
+            "new_item_name" => "Ajouter un nouveau sport",
+            "menu_name"     => "Sport",
+        ],
+        "show_in_rest"      => true,
+        "hierarchical"      => true,
+        "show_admin_column" => true,
+    ]);
+}
+
+add_action("init", "grafitheme_init");
+
 require_once("metaboxes/sponso.php");
 
 SponsoMetaBox::register();
