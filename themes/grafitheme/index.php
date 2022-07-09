@@ -7,7 +7,7 @@
 
             <div class="col-sm-4">
                 <div class="card">
-                    <?php the_post_thumbnail("post_thumbnail", ["class" => "card-img-top", "alt" => "", "style" => "height: auto;"]); ?>
+                    <?php the_post_thumbnail("card-header", ["class" => "card-img-top", "alt" => "", "style" => "height: auto;"]); ?>
 
                     <div class="card-body">
                         <h5 class="card-title"><?php the_title(); ?></h5>
@@ -24,6 +24,10 @@
             </div>
         <?php endwhile; ?>
     </div>
+
+    <?php grafitheme_pagination(); ?>
+
+    <?php //paginate_links(); ?>
 <?php else: ?>
     <h1>Pas d'articles.</h1>
 <?php endif; ?>

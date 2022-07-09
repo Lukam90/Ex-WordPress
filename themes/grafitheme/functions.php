@@ -7,6 +7,8 @@ function grafitheme_supports() {
 
     register_nav_menu("header", "En tête du menu");
     register_nav_menu("footer", "Pied de page");
+
+    add_image_size("post-thumbnail", 350, 215, true);
 }
 
 add_action("after_setup_theme", "grafitheme_supports");
@@ -54,3 +56,30 @@ function grafitheme_menu_link_class($attrs) {
 }
 
 add_filter("nav_menu_link_attributes", "grafitheme_menu_link_class");
+
+function grafitheme_pagination() {
+    $pages = paginate_links(["type" => "array"]);
+
+    if ($pages === null)    return;
+
+    echo "<nav aria-label='Pagination' class='my-4'>";
+
+    echo "<ul class='pagination'>";    
+
+    foreach ($pages as $page) {
+        $active = strpos($page, "current") !== false;
+        $class = "page-item";
+
+        if ($active)    $class .= " active";
+
+        echo "<li class='$class'>";
+
+        echo str_replace("page-numbers", "page-link", $page);
+
+        echo '</li>';
+    }
+
+    echo '</ul>';
+
+    echo '</nav>';
+}
