@@ -83,3 +83,7 @@ function grafitheme_pagination() {
 
     echo '</nav>';
 }
+
+require_once("metaboxes/sponso.php");
+
+SponsoMetaBox::register();
