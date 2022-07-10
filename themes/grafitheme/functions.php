@@ -117,5 +117,7 @@ function grafitheme_init() {
 add_action("init", "grafitheme_init");
 
 require_once("metaboxes/sponso.php");
+require_once("options/agence.php");
 
 SponsoMetaBox::register();
+AgenceMenuPage::register();
