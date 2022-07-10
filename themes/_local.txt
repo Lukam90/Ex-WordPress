@@ -1,0 +1,6 @@
+localhost:10019
+
+Apache
+PHP 8.0.0
+MySQL 5.7.28
+WP 6.0

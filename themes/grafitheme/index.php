@@ -29,8 +29,6 @@
     </div>
 
     <?php grafitheme_pagination(); ?>
-
-    <?php paginate_links(); ?>
 <?php else: ?>
     <h1>Pas d'articles.</h1>
 <?php endif; ?>
