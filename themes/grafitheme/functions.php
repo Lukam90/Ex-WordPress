@@ -157,6 +157,12 @@ add_filter("manage_post_posts_columns", function ($columns) {
 
 add_filter("manage_post_posts_custom_column", function($column, $postId) {
     if ($column === "sponso") {
-        get_post_meta($postId, "grafitheme_sponso", true);
+        if (! empty(get_post_meta($postId, SponsoMetaBox::META_KEY, true))) {
+            $class = "yes";
+        } else {
+            $class = "no";
+        }
+
+        echo "<div class='bullet bullet-$class'></div>";
     }
 }, 10, 2);
