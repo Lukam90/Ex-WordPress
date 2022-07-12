@@ -36,6 +36,12 @@
                         "taxonomy" => "sport",
                         "terms" => $sports,
                     ]
+                ],
+                "meta_query" => [
+                    [
+                        "key" => SponsoMetaBox::META_KEY,
+                        "compare" => "NOT EXISTS"
+                    ]
                 ]
             ]);
 
