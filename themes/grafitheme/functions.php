@@ -4,6 +4,7 @@ function grafitheme_supports() {
     add_theme_support("title-tag");
     add_theme_support("post-thumbnails");
     add_theme_support("menus");
+    add_theme_support("html5");
 
     register_nav_menu("header", "En tête du menu");
     register_nav_menu("footer", "Pied de page");
@@ -209,3 +210,14 @@ function grafitheme_register_widget() {
 }
 
 add_action("widgets_init", "grafitheme_register_widget");
+
+add_filter("comment_form_default_fields", function ($fields) {
+    $fields["email"] = <<<HTML
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" name="email" id="email" required />
+    </div>
+HTML;
+
+    return $fields;
+});
