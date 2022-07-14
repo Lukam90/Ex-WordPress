@@ -4,7 +4,7 @@
     <input type="search" class="form-control mb-2 mr-sm-2" name="search" id="search" value="<?= get_search_query(); ?>" placeholder="Votre recherche" />
 
     <div class="form-check mb-2 mr-sm-2">
-        <input class="form-check-input" type="checkbox" value="1" name="sponso" id="sponso" <?= checked("1", get_query_var("sponso")); ?>>
+        <input class="form-check-input" type="checkbox" value="1" name="sponso" id="sponso" <?= checked("1", get_query_var("sponso")); ?> />
 
         <label class="form-check-label" for="sponso">Article sponsorisé seulement</label>
     </div>

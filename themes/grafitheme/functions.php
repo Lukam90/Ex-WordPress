@@ -192,3 +192,16 @@ function grafitheme_query_vars ($params) {
 }
 
 add_filter("query_vars", "grafitheme_query_vars");
+
+function grafitheme_register_widget() {
+    register_sidebar([
+        "id" => "homepage",
+        "name" => "Sidebar Accueil",
+        "before_widget" => '<div class="p-4 %2$s" id="%1$s">',
+        "after_widget" => "</div>",
+        "before_title" => '<h4 class="font-italic">',
+        "after_title" => '</h4>'
+    ]);
+}
+
+add_action("widgets_init", "grafitheme_register_widget");
