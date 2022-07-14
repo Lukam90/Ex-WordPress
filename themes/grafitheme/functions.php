@@ -193,7 +193,11 @@ function grafitheme_query_vars ($params) {
 
 add_filter("query_vars", "grafitheme_query_vars");
 
+require_once "widgets/YoutubeWidget.php";
+
 function grafitheme_register_widget() {
+    register_widget(YoutubeWidget::class);
+
     register_sidebar([
         "id" => "homepage",
         "name" => "Sidebar Accueil",
