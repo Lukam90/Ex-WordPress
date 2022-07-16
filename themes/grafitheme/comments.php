@@ -3,7 +3,7 @@ $count = absint(get_comments_number());
 ?>
 
 <?php if ($count > 0): ?>
-    <h2><?= $count ?> Commentaire <?= $count > 1 ? 's' : '' ?></h2>
+    <h2><?= sprintf(_n("%s Commentaire", "%s Commentaires", $count, "grafitheme"), $count); ?></h2>
 <?php else: ?>
     <h2>Laisser un commentaire</h2>
 <?php endif; ?>

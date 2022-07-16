@@ -205,7 +205,7 @@ function grafitheme_register_widget() {
 
     register_sidebar([
         "id" => "homepage",
-        "name" => "Sidebar Accueil",
+        "name" => __("Sidebar Accueil", "grafitheme"),
         "before_widget" => '<div class="p-4 %2$s" id="%1$s">',
         "after_widget" => "</div>",
         "before_title" => '<h4 class="font-italic">',
@@ -228,3 +228,7 @@ HTML;
 
 add_action("after_switch_theme", "flush_rewrite_rules");
 add_action("switch_theme", "flush_rewrite_rules");
+
+add_action("after_setup_theme", function() {
+    load_theme_textdomain("grafitheme", get_template_directory() . "/languages");
+});
