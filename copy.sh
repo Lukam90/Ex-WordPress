@@ -7,6 +7,9 @@ copy="$HOME/Téléchargements/Copies"
 cp copy.sh $target
 cp copy.sh $copy
 
+cp config.txt $target
+cp config.txt $copy
+
 cp -r $path/themes $target
 cp -r $path/themes $copy
 

@@ -1,6 +1,7 @@
 <?php
 
 require_once "options/apparence.php";
+require_once "options/cron.php";
 
 function grafitheme_supports() {
     add_theme_support("title-tag");
